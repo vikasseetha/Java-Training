@@ -31,9 +31,8 @@ public class HashMapvsTreeMap
 		long SpaceComplexityInsertion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();
 		long TimeComplexityInsertion = endTime - startTime;
-		for (int i = 0; i < 100000; i++) {
-			hashMap.remove(i,"value"+i);
-		}
+		
+		hashMap.remove(1000);
 		memoryAfter = getMemoryUsage();
 		long SpaceComplexityDeletion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();
@@ -58,9 +57,8 @@ public class HashMapvsTreeMap
 		}
 		long SpaceComplexityTreeMapInsertion = memoryAfter - memoryBefore;
 		long TimeComplexityTreeMapInsertion = endTime - startTime;
-		for (int i = 0; i < 100000; i++) {
-			treeMap.remove(i,"value"+i);
-		}
+		
+		treeMap.remove(1000);
 		memoryAfter = getMemoryUsage();
 		long SpaceComplexityTreeMapDeletion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();

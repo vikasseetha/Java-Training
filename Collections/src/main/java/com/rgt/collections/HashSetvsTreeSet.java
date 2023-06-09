@@ -29,9 +29,8 @@ public class HashSetvsTreeSet {
 		long SpaceComplexityInsertion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();
 		long TimeComplexityInsertion = endTime - startTime;
-		for (int i = 0; i < 100000; i++) {
-			hashset.remove(i);
-		}
+	
+		hashset.remove(1000);
 		memoryAfter = getMemoryUsage();
 		long SpaceComplexityDeletion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();
@@ -56,9 +55,8 @@ public class HashSetvsTreeSet {
 		}
 		long SpaceComplexityTreeSetInsertion = memoryAfter - memoryBefore;
 		long TimeComplexityTreeSetInsertion = endTime - startTime;
-		for (int i = 0; i < 100000; i++) {
-			treeSet.remove(i);
-		}
+		
+		treeSet.remove(1000);
 		memoryAfter = getMemoryUsage();
 		long SpaceComplexityTreeSetDeletion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();

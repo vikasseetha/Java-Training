@@ -21,7 +21,6 @@ public class ArraysvsLinkedList {
 
 		startTime = System.nanoTime();
 		memoryBefore = getMemoryUsage();
-
 		for (int i = 0; i < 100000; i++) {
 			arrayList.add(i);
 		}
@@ -29,14 +28,12 @@ public class ArraysvsLinkedList {
 		long SpaceComplexityInsertion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();
 		long ArrayListTimeComplexityInsertion = endTime - startTime;
-		for (int i = 0; i < 100000; i++) {
-			arrayList.remove(Integer.valueOf(i));
-		}
+		
+		arrayList.remove(90000);
 		memoryAfter = getMemoryUsage();
 		long SpaceComplexityDeletion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();
 		long ArrayListTimeComplexityDeletion = endTime - startTime;
-
 		System.out.println("------------------------------------------------------------------------------------------");
 		System.out.println("********ARRAY LIST***********");
 		System.out.println("ArrayList Time Complexity for Insertion		:" + ArrayListTimeComplexityInsertion+ " ns ");
@@ -56,9 +53,8 @@ public class ArraysvsLinkedList {
 		}
 		long SpaceComplexitylinkedlistInsertion = memoryAfter - memoryBefore;
 		long TimeComplexitylinkedlistInsertion = endTime - startTime;
-		for (int i = 0; i < 100000; i++) {
-			linkedList.remove(Integer.valueOf(i));
-		}
+	
+		linkedList.remove(1000);
 		memoryAfter = getMemoryUsage();
 		long SpaceComplexitylinkedlistDeletion = memoryAfter - memoryBefore;
 		endTime = System.nanoTime();
