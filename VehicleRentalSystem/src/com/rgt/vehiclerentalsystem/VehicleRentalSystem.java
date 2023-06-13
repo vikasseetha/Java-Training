@@ -53,28 +53,32 @@ public class VehicleRentalSystem {
 		}
 	}
 
-	private static void addVehicle(RentalService rentalService, Scanner scanner) {
-		System.out.print("Enter the type of vehicle (car, motorcycle, bicycle): ");
-		String type = scanner.nextLine();
+	private static void addVehicle(RentalService rentalService, Scanner scanner) 
+	{
+		System.out.println("Enter the type of vehicle : ");
+		System.out.println("1: Car");
+		System.out.println("2 :MotorBike");
+		System.out.println("3 :Bicycle");
+		int type = scanner.nextInt();
 
 		System.out.print("Enter the license plate: ");
-		String licensePlate = scanner.nextLine();
+		String licensePlate = scanner.next();
 
 		System.out.print("Enter the make: ");
-		String make = scanner.nextLine();
+		String make = scanner.next();
 
 		System.out.print("Enter the model: ");
-		String model = scanner.nextLine();
-
+		String model = scanner.next();
+		
 		Vehicle vehicle;
 		switch (type) {
-		case "car":
+		case 1:
 			vehicle = new Car(licensePlate, make, model);
 			break;
-		case "motorcycle":
+		case 2:
 			vehicle = new MotorCycle(licensePlate, make, model);
 			break;
-		case "bicycle":
+		case 3:
 			vehicle = new Bicycle(licensePlate, make, model);
 			break;
 		default:
