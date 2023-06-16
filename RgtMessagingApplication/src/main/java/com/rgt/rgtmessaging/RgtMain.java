@@ -99,7 +99,7 @@ public class RgtMain {
 	private static void loggedInMenu(String username) {
 		boolean isLoggedIn = true;
 		while (isLoggedIn) {
-			System.out.println("\n WELCOME : " + username);
+			System.out.println("\n WELCOME USER : " + username);
 			System.out.println("Please choose an option:");
 			System.out.println("1. Follow user");
 			System.out.println("2. Post tweet");
@@ -152,14 +152,14 @@ public class RgtMain {
 	private static void followUser() {
 		System.out.println("Enter the username of the user you want to follow:");
 		String username = scanner.nextLine();
-		
+
 		if (rgtMessaging.follow(username)) {
 			System.out.println(" User followed successfully with username " + username);
 		} else {
 			System.out.println("User not found.");
 		}
 	}
-	
+
 	private static void postTweet(String username) {
 		System.out.println("\n--- Post Tweet ---");
 		System.out.print("Enter your tweet: ");
@@ -169,6 +169,11 @@ public class RgtMain {
 
 	}
 
+	/**
+	 * This method view Timeline is used to view the user timeline it will return
+	 * the TweetId,Author, content,Timestamp
+	 * 
+	 */
 	public static void viewTimeline() {
 		if (currentuser == null) {
 			System.out.println("You are not logged in. Please log in first.");
@@ -242,6 +247,9 @@ public class RgtMain {
 		}
 	}
 
+	/**
+	 * This method is used to delete the tweet with the help of TweetID
+	 */
 	private static void deleteTweets() {
 		if (currentuser == null) {
 			System.out.println("You are not logged in. Please log in first.");
@@ -267,7 +275,7 @@ public class RgtMain {
 			System.out.println("Profile not found.");
 		}
 	}
-	
+
 	private static void unFollowUser() {
 		System.out.println("Enter the username of the user you want to unfollow:");
 		String username = scanner.nextLine();

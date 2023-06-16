@@ -12,17 +12,17 @@ public class User {
 	private List<String> followers;
 	private List<Tweet> tweets;
 
-	public User(String username, String password, String name,String bio) {
+	public User(String username, String password, String name, String bio) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.name = name;
-		this.bio =bio;
+		this.bio = bio;
 		this.followings = new ArrayList<>();
-        this.followers = new ArrayList<>();
-        this.tweets = new ArrayList<>();
+		this.followers = new ArrayList<>();
+		this.tweets = new ArrayList<>();
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -78,22 +78,23 @@ public class User {
 	public void setTweets(List<Tweet> tweets) {
 		this.tweets = tweets;
 	}
+
 	public void postTweet(String content) {
 		long timestamp = System.currentTimeMillis();
-        String tweetId = Long.toString(timestamp);
-        Tweet tweet = new Tweet(tweetId, content, this.username);
-        tweets.add(tweet);
-    }
-	
+		String tweetId = Long.toString(timestamp);
+		Tweet tweet = new Tweet(tweetId, content, this.username);
+		tweets.add(tweet);
+	}
+
 	public void follow(String followeeUsername) {
-        followings.add(followeeUsername);
-    }
-	
-	 public void unfollow(String username) {
-	        followings.remove(username);
-	    }
-	
+		followings.add(followeeUsername);
+	}
+
+	public void unfollow(String username) {
+		followings.remove(username);
+	}
+
 	public void deleteTweet(String tweetId) {
-        tweets.removeIf(tweet -> tweet.getId().equals(tweetId));
-    }
+		tweets.removeIf(tweet -> tweet.getId().equals(tweetId));
+	}
 }
