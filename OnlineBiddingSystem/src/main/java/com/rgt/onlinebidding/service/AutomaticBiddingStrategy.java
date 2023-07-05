@@ -25,9 +25,7 @@ public class AutomaticBiddingStrategy implements BiddingStrategy {
             currentBid = newBidAmount;
             newBidAmount += incrementValue;
         }
-    	item.placeBid(user, newBidAmount);
     	item.notifyObservers(item);
         return newBidAmount;
     }
-
 }
